@@ -1,0 +1,189 @@
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg,#1a0033,#330033,#00001a);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  color: white;
+}
+
+/* Center */
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+
+.card {
+  width: 90%;
+  max-width: 450px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 50px rgba(255,0,150,0.3);
+  position: relative;
+  z-index: 10;
+}
+
+/* Title */
+
+h1 {
+  margin: 15px 0;
+  font-size: 32px;
+}
+
+/* Subtitle */
+
+#subtitle {
+  margin: 10px 0;
+  color: #ffb3d9;
+}
+
+/* Gif */
+
+img {
+  width: 100%;
+  border-radius: 15px;
+  margin: 15px 0;
+}
+
+/* Buttons */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+button {
+  border: none;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Yes */
+
+.yes {
+  background: linear-gradient(135deg,#ff4da6,#ff0066);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(255,0,120,0.6);
+}
+
+/* No */
+
+.no {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Hover */
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Result */
+
+#result {
+  margin-top: 15px;
+  font-size: 17px;
+  min-height: 30px;
+}
+
+/* Music Button */
+
+.music-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+/* Hearts container (IMPORTANT FIX) */
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* <<< THIS FIXES CLICKS */
+  z-index: 1;
+}
+
+/* Hearts */
+
+.hearts span {
+  position: absolute;
+  bottom: -20px;
+  width: 15px;
+  height: 15px;
+  background: pink;
+  transform: rotate(45deg);
+  animation: float 10s infinite linear;
+  opacity: 0.4;
+}
+
+.hearts span::before,
+.hearts span::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: pink;
+  border-radius: 50%;
+}
+
+.hearts span::before {
+  left: -7px;
+}
+
+.hearts span::after {
+  top: -7px;
+}
+
+/* Positions */
+
+.hearts span:nth-child(1){left:10%;}
+.hearts span:nth-child(2){left:20%;}
+.hearts span:nth-child(3){left:30%;}
+.hearts span:nth-child(4){left:40%;}
+.hearts span:nth-child(5){left:50%;}
+.hearts span:nth-child(6){left:60%;}
+.hearts span:nth-child(7){left:70%;}
+.hearts span:nth-child(8){left:80%;}
+.hearts span:nth-child(9){left:90%;}
+.hearts span:nth-child(10){left:95%;}
+
+@keyframes float {
+  from {
+    transform: translateY(0) rotate(45deg);
+  }
+  to {
+    transform: translateY(-120vh) rotate(45deg);
+  }
+}
